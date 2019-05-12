@@ -30,7 +30,7 @@ def clean_data(descp):
     stop_words = stopwords.words('english')
 
     for tkn in tokens:
-        if(tkn != stop_words):
+        if(tkn not in stop_words):
             clean_data.append(tkn)
 
     return clean_data
@@ -57,7 +57,7 @@ def reorder_data(data_obj):
     for solution in reordered_data:
         solution['descp'] = clean_data(solution['descp'])
 
-    print(reordered_data)
+    return reordered_data
 
 def main():
     data_obj = [{'solutionID': 1.0, 'solution': {'step1': 'There are muliple configurations to be checked to understand why push notification not reached to ios device even though the status was submitted.First of all check whether user configured same bundle identifier The push certificate will be based on the bundle identifier and same needs to be configured in kms console.in the application. You can find the bundle identifier in your provision profile',
